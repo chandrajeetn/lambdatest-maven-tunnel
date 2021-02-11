@@ -195,6 +195,7 @@ public class Tunnel {
         final Process process = processBuilder.start();
             try {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+                BufferedReader readererr = new BufferedReader(new InputStreamReader(process.getErrorStream()));
                 String line = null;
                 while ((line = reader.readLine()) != null) {
                     System.out.println(line);
